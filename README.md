@@ -18,6 +18,7 @@ After the install process is over, you'll be able to run this application:
 
 ```bash
 ./start.sh
+```
 
 This application should run on port 3000, so in your browser just go to [http://localhost:3000](http://localhost:3000)
 

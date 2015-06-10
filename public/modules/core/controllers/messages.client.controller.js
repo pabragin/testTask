@@ -14,8 +14,6 @@ angular.module('core').controller('MessagesController', ['$scope', 'presenter', 
          * When data updates in presenter
          * update messages
          */
-        $scope.$watch('presenter.messages', function () {
-            $scope.messages = presenter.getMessages();
-        });
+        $scope.messages = presenter.getMessages();
     }]
 );

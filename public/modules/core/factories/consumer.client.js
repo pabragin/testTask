@@ -1,24 +1,27 @@
 'use strict';
 
-angular.module('core').factory('consumer', function () {
+angular.module('core').factory('consumer', ["$http", function ($http) {
     return {
         /**
          * Get message by id
          * and push it to presenter
          */
         getData: function (presenter, currentId) {
-            $.ajax({url: "/messages/" + currentId, success: function (data) {
-                presenter.addNewMessage(data);
-            }, cache: false});
+            $http.get("/messages/" + currentId).
+                success(function(data){
+                    presenter.addNewMessage(data);
+                }
+            );
         },
         /**
          * Get random message from server
          * and push it to presenter
          */
         getRandomData: function (presenter) {
-            $.ajax({url: "/messages", success: function (data) {
-                presenter.addNewMessage(data);
-            }, cache: false});
+            $http.get("/messages", {cache: false}).success(function(data){
+                    presenter.addNewMessage(data);
+                }
+            );
         },
         /**
          * Push current message to presenter
@@ -27,4 +30,4 @@ angular.module('core').factory('consumer', function () {
             presenter.addNewMessage(data);
         }
     }
-});
+}]);

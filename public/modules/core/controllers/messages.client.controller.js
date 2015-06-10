@@ -1,5 +1,5 @@
 'use strict';
-angular.module('core').controller('MessagesController', ['$scope', '$rootScope', 'presenter', 'consumer', function ($scope, $rootScope, presenter, consumer) {
+angular.module('core').controller('MessagesController', ['$scope', 'presenter', 'consumer', function ($scope, presenter, consumer) {
 
         $scope.messages = [];
 
@@ -12,11 +12,10 @@ angular.module('core').controller('MessagesController', ['$scope', '$rootScope',
 
         /**
          * When data updates in presenter
-         * we get "messages.update"
+         * update messages
          */
-        $scope.$on('messages.update', function () {
+        $scope.$watch('presenter', function () {
             $scope.messages = presenter.getMessages();
-            $scope.$apply();
         });
     }]
 );

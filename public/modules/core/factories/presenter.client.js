@@ -1,4 +1,4 @@
-angular.module('core').factory('presenter', [ '$rootScope', function( $rootScope ){
+angular.module('core').factory('presenter', [ '$timeout', function( $timeout ){
     var uniqID = 0;
 
     return {
@@ -12,15 +12,13 @@ angular.module('core').factory('presenter', [ '$rootScope', function( $rootScope
         messages: [],
         /**
          * Adds new message to array
-         * and broadcast about that
          */
         addNewMessage: function(data){
+            var that = this;
             data.messageId = uniqID; // add iniq ID for every messages
             this.messages.push(data);
             uniqID++;
-            $rootScope.$broadcast( 'messages.update' );
-            var that = this;
-            setTimeout(function(){that.removeMessage(data)}, data.lifeLength);
+            $timeout(function(){that.removeMessage(data)}, data.lifeLength);
         },
         /**
          * Return array of messages
@@ -30,13 +28,11 @@ angular.module('core').factory('presenter', [ '$rootScope', function( $rootScope
         },
         /**
          * Remove specific item from array
-         * and broadcast about that
          */
         removeMessage: function(item) {
             for(var i = this.messages.length; i--;) {
                 if(this.messages[i] === item) {
                     this.messages.splice(i, 1);
-                    $rootScope.$broadcast( 'messages.update' );
                 }
             }
         }

@@ -49,3 +49,7 @@ This application should run on port 3000, so in your browser just go to [http://
       controllers/      --> This is for backend business logic.
       routes/           --> The routes folder contains the Server routing configuration files
       views/            --> For backend views
+
+## Live example
+
+[http://45.55.252.125:3000](http://45.55.252.125:3000)

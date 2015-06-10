@@ -1,0 +1,18 @@
+{
+	"name": "testTask",
+	"version": "0.0.1",
+	"description": "test task",
+	"dependencies": {
+		"bootstrap": "latest",
+		"angular": "latest",
+		"angular-resource": "latest",
+		"angular-animate": "latest",
+		"angular-mocks": "latest",
+		"angular-bootstrap": "latest",
+		"angular-bootstrap": "latest",
+		"angular-ui-utils": "latest",
+		"angular-ui-router": "latest",
+	  	"jquery": "latest",
+	  	"jquery-ui": "latest"
+	}
+}

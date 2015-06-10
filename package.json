@@ -1,0 +1,64 @@
+{
+  "name": "testTask",
+  "description": "test task",
+  "version": "0.0.1",
+  "private": false,
+  "author": "https://github.com/pabragin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pabragin/testTask.git"
+  },
+  "engines": {
+    "node": ">=0.12.2",
+    "npm": ">=2.7.4"
+  },
+  "scripts": {
+    "start": "grunt",
+    "test": "grunt test",
+    "postinstall": "bower install --config.interactive=false"
+  },
+  "dependencies": {
+    "async": "^1.1.0",
+    "body-parser": "^1.12.4",
+    "bower": "^1.4.1",
+    "chalk": "^1.0.0",
+    "compression": "^1.4.4",
+    "consolidate": "^0.13.1",
+    "cookie-parser": "^1.3.5",
+    "express": "^5.0.0-alpha.1",
+    "express-session": "^1.11.2",
+    "forever": "^0.14.1",
+    "glob": "~4.0.5",
+    "grunt-cli": "^0.1.13",
+    "helmet": "^0.9.0",
+    "lodash": "^3.9.3",
+    "method-override": "^2.3.3",
+    "morgan": "^1.5.3",
+    "nodemailer": "^1.3.4",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "supertest": "*",
+    "should": "*",
+    "grunt-env": "*",
+    "grunt-node-inspector": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-csslint": "*",
+    "grunt-ng-annotate": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-nodemon": "*",
+    "grunt-concurrent": "*",
+    "grunt-mocha-test": "*",
+    "grunt-karma": "*",
+    "load-grunt-tasks": "*",
+    "grunt-contrib-copy": "*",
+    "karma": "*",
+    "karma-jasmine": "*",
+    "karma-coverage": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "karma-phantomjs-launcher": "*"
+  }
+}

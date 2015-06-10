@@ -1,0 +1,29 @@
+<section data-ng-controller="MessagesController">
+    <div class = "container">
+        <div class="jumbotron">
+            <h1>Test task</h1>
+            <p>Please press the NEXT button to load message</p>
+            <p><a class="btn btn-primary btn-lg" ng-click='loadNextMessage()' role="button">NEXT</a></p>
+        </div>
+        <ul class="myListOfMessages">
+            <li data-ng-repeat="message in messages" class="repeat-item">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Message type: {{message.messageType}}
+                        <div class="pull-right">
+                            Message Life Length: {{message.lifeLength}}
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-if="message.messageType==='text'">
+                            <div>{{ message.messageData }}</div>
+                        </div>
+                        <div ng-if="message.messageType==='pic'">
+                            <img ng-src="data:image/jpeg;base64,{{ message.messageData }}" />
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -18,7 +18,7 @@ angular.module('core').factory('consumer', ["$http", function ($http) {
          * and push it to presenter
          */
         getRandomData: function (presenter) {
-            $http.get("/messages", {cache: false}).success(function(data){
+            $http.get("/messages/random", {cache: false}).success(function(data){
                     presenter.addNewMessage(data);
                 }
             );

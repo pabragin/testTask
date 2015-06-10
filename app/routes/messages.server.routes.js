@@ -6,7 +6,7 @@
 var messages = require('../../app/controllers/messages.server.controller');
 
 module.exports = function(app) {
-    // Article Routes
+    // Messages Routing
     app.route('/messages/random')
         .get(messages.readRandom);
 

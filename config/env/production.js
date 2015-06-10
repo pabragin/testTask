@@ -12,6 +12,12 @@ module.exports = {
 	},
 	app: {
 		title: 'TestTask',
+		/**
+		 * messageId - int
+		 * messageType - "text"/"pic"
+		 * lifeLength - int(milliseconds)
+		 * messageData - string
+		 */
 		textMessage: [
 			{messageType:"text", lifeLength: 5000, messageData:'Hello world 1'},
 			{messageType:"text", lifeLength: 1000, messageData:'Hello world 2'},

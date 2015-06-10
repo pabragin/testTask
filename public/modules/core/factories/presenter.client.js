@@ -3,7 +3,6 @@ angular.module('core').factory('presenter', [ '$timeout', function( $timeout ){
 
     return {
         /**
-         * Contains json
          * messageId - int
          * messageType - "text"/"pic"
          * lifeLength - int(milliseconds)

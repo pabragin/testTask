@@ -7,25 +7,18 @@ angular.module('core').factory('consumer', function () {
          * and push it to presenter
          */
         getData: function (presenter, currentId) {
-            $.get("/messages/" + currentId)
-                .fail(function () { // If we cant get this message get first
-                    currentId = 0;
-                    $.get("/messages/" + currentId, function (data) {
-                        presenter.addNewMessage(data);
-                    })
-                }).done(function (data) {
-                    presenter.addNewMessage(data);
-                });
+            $.ajax({url: "/messages/" + currentId, success: function (data) {
+                presenter.addNewMessage(data);
+            }, cache: false});
         },
         /**
          * Get random message from server
          * and push it to presenter
          */
         getRandomData: function (presenter) {
-            $.get("/messages")
-                .done(function (data) {
-                    presenter.addNewMessage(data);
-                });
+            $.ajax({url: "/messages", success: function (data) {
+                presenter.addNewMessage(data);
+            }, cache: false});
         },
         /**
          * Push current message to presenter
